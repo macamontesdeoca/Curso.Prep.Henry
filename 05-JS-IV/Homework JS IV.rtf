@@ -1,7 +1,8 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
-{\colortbl;\red255\green255\blue255;\red217\green11\blue5;\red217\green11\blue5;}
-{\*\expandedcolortbl;;\cssrgb\c88946\c14202\c0;\cssrgb\c88946\c14202\c0;}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue5;}
+{\*\expandedcolortbl;;\cssrgb\c88946\c14202\c0;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
@@ -19,10 +20,27 @@ objeto
 \f1\b \cf2 \ul \ulc2 .nombredepropiedadnueva = cuerpo de la nueva propiedad\
 
 \f0\b0 \cf0 \ulnone objeto
-\f1\b \cf3 \ul \ulc3 [\'91nombredepropiedadnueva\'92]= cuerpo de la nueva propiedad
-\f0\b0 \cf0 \ulnone \
+\f1\b \cf2 \ul [\'91nombredepropiedadnueva\'92]= cuerpo de la nueva propiedad\
+\
+
+\f0\b0 \cf0 \ulnone Si la propiedad se est\'e1 agregando desde una function, donde el nombre del objeto y su propiedad son argumentos que pueden VARIAR, NO utilizo las comillas al agregar esta propiedad.\
+\
+Para llamar a una propiedad puedo hacerlo de 2 maneras:\
+objeto.nombrepropiedad (TENGO QUE SABER EL NOMBRE EXACTO DE LA PROPIEDAD)\
+objeto [propiedad] (si son 
+\f2\i variables
+\f0\i0  que ingreso como argumentos de una funci\'f3n o que tengo el nombre de la propiedad almacenada en una variable), objeto [\'91propiedad\'92] (igual a dot notation).\
+\
+Para eliminar una variable aplico DELETE:\
+delete objeto[propiedad]   SI NO S\'c9 LA PROPIEDAD Y LA TENGO COMO VARIABLE/ARGUMENTO\
+delete objeto.propiedad SI SE LA PROPIEDAD\
+\
+Para reemplazar el valor de una propiedad, simplemente lo realizo como si estuviera agregando una, pero utilizando el nombre de la propiedad que quiero modificar.\
+\
+Si una de las propiedades de mi objeto es un array, puedo acceder a \'e9l y sus elementos como me manejaba con arrays. Accedo llamando al array como objeto.propiedadqueesarray y luego trabajo con sus elementos utilizando los corchetes.\
+\
 - 
-\f1\b \ul M\'e9todos:
+\f1\b \ul \ulc2 M\'e9todos:
 \f0\b0 \ulnone  Cuando una propiedad de un objeto es una funci\'f3n, se la conoce como m\'e9todo. Existe la posibilidad de declarar una funci\'f3n y luego utilizarla junto con la propiedad \'91this\'92 para luego invocarla como propiedad de un objeto:\
 function saludar () \{\
 	console.log(\'91Hola \'91 + this.nombre);\
@@ -41,12 +59,18 @@ return (\'91Hola \'91 + this.name) 		\
 Maca.saludar();\
 devuelve : Hola Maca\
 \
+Para llamar a un m\'e9todo puedo hacerlo de 2 maneras (equivalente a propiedades ya que el m\'e9todo es una propiedad del objeto) :\
+objeto.nombremetodo(); (TENGO QUE SABER EL NOMBRE EXACTO DEL METODO)\
+objeto [metodo] (si son 
+\f2\i variables
+\f0\i0  que ingreso como argumentos de una funci\'f3n o que tengo el nombre de la propiedad almacenada en una variable), objeto [\'91m\'e9todo\'92] (igual a dot notation).\
+\
 - 
-\f1\b \ul Bucle \'91for .. in\'92:
+\f1\b \ul \ulc2 Bucle \'91for .. in\'92:
 \f0\b0 \ulnone  Para recorrer todas las propiedades y valores de un objeto con el bucle FOR, aparece la notaci\'f3n for + in. Se declara como for (creo variable (var = / let) , in nombre del objeto). \
 \
 - 
-\f1\b \ul Notaci\'f3n de puntos (dot notation) vs notaci\'f3n de corchetes (bracket notation):
+\f1\b \ul \ulc2 Notaci\'f3n de puntos (dot notation) vs notaci\'f3n de corchetes (bracket notation):
 \f0\b0 \ulnone  El punto (dot) me permite acceder r\'e1pidamente a la propiedad que estoy buscando, evit\'e1ndome escribir corchetes y comillas. Pero como contrapunto, cuando escribo una propiedad con dot notation, tengo que SABER exactamente el nombre de la propiedad, no puedo referenciarlo a, por ejemplo, una variable. La bracket notation me permite realizar referencias. Ejemplo\
 \
 var objeto = \{\
