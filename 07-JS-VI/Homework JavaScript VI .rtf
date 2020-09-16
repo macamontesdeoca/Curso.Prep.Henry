@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Homework JavaScript VI\
+\
+Conceptos \'fatiles\
+\
+
+\f1\b \ul - Callbacks:
+\f0\b0 \ulnone  es la capacidad de pasar una funci\'f3n como argumento de otra funci\'f3n\
+Sintaxis:\
+function nombre_funci\'f3n (parametro1, funci\'f3n)\{ //No se pasa como invoc\'e1ndola, con par\'e9ntesis ya 		return funci\'f3n (parametro1);			que si as\'ed lo hici\'e9ramos se interpretar\'eda como 			\}							par\'e1metro el resultado de esa  llamada\
+\
+En arreglos:\
+\
+.forEach\
+Sintaxis:\
+nombre_array.forEach(function(parametros)\{\
+c\'f3digo de la funci\'f3n \
+\} //cierre de la function dentro del par\'e1metro ) //cierre del par\'e9ntesis del forEach.\
+La funci\'f3n acepta hasta 3 par\'e1metros, siendo estos en orden= elemento, indice o ubicaci\'f3n en el array, array. De modo tal que yo a los par\'e1metros puedo asignarle el string que quiera pero siempre se referir\'e1n a esos elementos del array. No retorna nada, solo lo aplica a todos los elementos del arreglo. El resultado es \'91undefined\'92.\
+\
+.map\
+Sintaxis:\
+var nuevo_arreglo = nombre_array_base.map(function(parametros)\{\
+return lo_que_quiero_almacenar_en_nuevo_array;\
+\} //cierre de la function dentro del par\'e1metro ) //cierre del par\'e9ntesis del map.\
+La funci\'f3n acepta hasta 3 par\'e1metros, siendo estos en orden= elemento, indice o ubicaci\'f3n en el array, array. De modo tal que yo a los par\'e1metros puedo asignarle el string que quiera pero siempre se referir\'e1n a esos elementos del array. Retorna un arreglo al cual le aplicamos la misma operaci\'f3n a todos los elementos del arreglo base.\
+\
+.reduce\
+Sintaxis:\
+var nueva_variable = nombre_array_base.reduce (function(par\'e1metros)\{\
+return un_unico_valor;\
+\} //cierre de la function dentro del par\'e1metro ) //cierre del par\'e9ntesis del reduce.Antes puede ir el valor con el que el acumulador empieza\
+La funci\'f3n acepta hasta 4 par\'e1metros, siendo estos en orden = acumulador, elemento, indice, array. De modo tal que yo a los par\'e1metros puedo asignarle el string que quiera pero siempre se referir\'e1n a esos elementos del array. Retorna un \'fanico valor resultado de la operaci\'f3n aplicada al array. Si no le doy un start utiliza el primer elemento del array / 0 ?? .}

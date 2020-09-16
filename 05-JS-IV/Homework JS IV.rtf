@@ -6,18 +6,24 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 Homework JavaScript IV\
+\f0\fs24 \cf0 Homework JavaScript V\
 \
 Conceptos \'fatiles\
 \
 - 
 \f1\b \ul Objetos:
 \f0\b0 \ulnone  Los objetos permiten almacenar propiedades que le corresponden a en elemento en forma de clave : valor. Los arrays, por ejemplo, son una especie particular de objetos en los que la clave es num\'e9rica: array [0]  ser\'eda buscar el valor almacenado en la propiedad \'910\'92. Las propiedades de un objeto pueden llamarse tanto con corchetes como con \'91punto\'92. Es decir, objeto[\'91propiedad\'92] u objeto.propiedad.\
+Sintaxis:\
+var obj = \{\
+key 1 : value 1,\
+key 2 : value 2,\
+\}\
 - 
 \f1\b \ul Propiedades:
 \f0\b0 \ulnone  Las propiedades se encuentran dentro del cuerpo del objeto. Normalmente son strings (nombre : Maca) y van separadas por comas \'91,\'92. Pueden pisarse, agregarse o eliminarse (delete). Las propiedades admiten todo tipo de valor: num\'e9rico, string, boleado, funciones, array, etc. Cuando agrego una propiedad a un objeto lo hago de esta manera:\
 objeto
 \f1\b \cf2 \ul \ulc2 .nombredepropiedadnueva = cuerpo de la nueva propiedad\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b0 \cf0 \ulnone objeto
 \f1\b \cf2 \ul [\'91nombredepropiedadnueva\'92]= cuerpo de la nueva propiedad\
@@ -40,7 +46,7 @@ Para reemplazar el valor de una propiedad, simplemente lo realizo como si estuvi
 Si una de las propiedades de mi objeto es un array, puedo acceder a \'e9l y sus elementos como me manejaba con arrays. Accedo llamando al array como objeto.propiedadqueesarray y luego trabajo con sus elementos utilizando los corchetes.\
 \
 - 
-\f1\b \ul \ulc2 M\'e9todos:
+\f1\b \ul M\'e9todos:
 \f0\b0 \ulnone  Cuando una propiedad de un objeto es una funci\'f3n, se la conoce como m\'e9todo. Existe la posibilidad de declarar una funci\'f3n y luego utilizarla junto con la propiedad \'91this\'92 para luego invocarla como propiedad de un objeto:\
 function saludar () \{\
 	console.log(\'91Hola \'91 + this.nombre);\
@@ -66,11 +72,11 @@ objeto [metodo] (si son
 \f0\i0  que ingreso como argumentos de una funci\'f3n o que tengo el nombre de la propiedad almacenada en una variable), objeto [\'91m\'e9todo\'92] (igual a dot notation).\
 \
 - 
-\f1\b \ul \ulc2 Bucle \'91for .. in\'92:
+\f1\b \ul Bucle \'91for .. in\'92:
 \f0\b0 \ulnone  Para recorrer todas las propiedades y valores de un objeto con el bucle FOR, aparece la notaci\'f3n for + in. Se declara como for (creo variable (var = / let) , in nombre del objeto). \
 \
 - 
-\f1\b \ul \ulc2 Notaci\'f3n de puntos (dot notation) vs notaci\'f3n de corchetes (bracket notation):
+\f1\b \ul Notaci\'f3n de puntos (dot notation) vs notaci\'f3n de corchetes (bracket notation):
 \f0\b0 \ulnone  El punto (dot) me permite acceder r\'e1pidamente a la propiedad que estoy buscando, evit\'e1ndome escribir corchetes y comillas. Pero como contrapunto, cuando escribo una propiedad con dot notation, tengo que SABER exactamente el nombre de la propiedad, no puedo referenciarlo a, por ejemplo, una variable. La bracket notation me permite realizar referencias. Ejemplo\
 \
 var objeto = \{\

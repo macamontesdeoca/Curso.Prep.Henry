@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Homework JavaScript V\
+\
+Conceptos \'fatiles\
+\
+
+\f1\b \ul - Funciones Constructoras (o constructores de clase):
+\f0\b0 \ulnone  son un tipo de funci\'f3n que se llama constructor con la cual \'93crearemos\'94 objetos. En ella usaremos la key word \'91
+\f2\i this
+\f0\i0 \'92, y tiene la particularidad de que no retorna nada. Es an\'e1logo a crear una \'93plantilla\'94 para producir cosas (como una f\'e1brica de autos, y de ah\'ed con distintas propiedades saco autos AUDI, autos VOLVO, etc). La convenci\'f3n es que la funci\'f3n comience con May\'fascula.\
+Sintaxis:\
+function Funcionconstructora(argumentos)\{\
+this.propiedad1 = valor propiedad 1; \
+this.propiedad2 = valor propiedad 2;\
+\}\
+La funci\'f3n puede no pedir argumentos y tener \'91fijos\'92 los valores de las propiedades (todos los objetos se llamar\'e1n por ejemplo Juan Perez) o puede pedir argumentos y usar esos argumentos como valores para las propiedades. Se puede incorporar un operador l\'f3gico (como el ||, el cual si no recibe el valor por argumento asigna uno random):\
+function Persona(nombre, apellido)\{\
+this.nombre = nombre || \'91Juan\'92 ;      //esto se llama default operator\
+this.apellido = apellido || \'91Perez ;\
+\}\
+\
+
+\f1\b \ul - Prototype:
+\f0\b0 \ulnone  Es una referencia a otro objeto que es llamado su \'93prototipo\'94, TODOS los objetos tienen referencia a otro llamado proto. Podemos chequear los prototipos con nombreobjeto\ul .__proto__\ulnone . Si yo llamo a una propiedad de un objeto y \'e9ste no lo tiene en su interior, JS va a buscar esa propiedad en su PROTOTIPO (length, push, pop, etc). Cuando yo uso una funci\'f3n constructora, lo que digo es que el prototipo de los objetos que cre\'e9 en BASE a esa FUNCION es ESA FUNCI\'d3N. La mayor utilidad de prototype es darle m\'e9todos (funciones) a sus instancias. Para ello, creo las funciones de esta manera:\
+nombre_funcion_constructora.prototype.nombre_metodo_a_crear = function( ) \{ \}\
+// NO estoy tocando el prototipo de la funci\'f3n constructora al usar .prototype; es solo una cuesti\'f3n de dise\'f1o de JS, estoy creando funciones que van a estar dentro del prototipo.\
+Luego, podr\'e9 llamar a los objetos creados con esta funci\'f3n con los m\'e9todos creados:\
+obj.nombre_del_metodo( ) ;\
+Si yo creara - para cierto objeto creado con una funci\'f3n constructora- , un metodo que se llame igual que el metodo que tiene la funci\'f3n constructora, al llamarlo (obj.metodo) me devolver\'e1 el valor del metodo almacenado en el objeto y no en la funci\'f3n (se pisan).\
+\
+
+\f1\b \ul - Instanciar un objeto de la \'93clase\'94 creada por la funci\'f3n constructora:
+\f0\b0 \ulnone  Se utilizan varios m\'e9todos.\
+\
+1) Keyword \'93new\'94: \
+var nombrevariable (en este caso un objeto) = new nombreFunci\'f3nconstructora (argumentos);\
+\
+El keyword \'93new\'94 realiza tareas que no vemos: crea un objeto nuevo vac\'edo; invoca a la funci\'f3n constructora ,\'92 bindea\'92 (.bind) con el objeto vac\'edo y retorna el nuevo objeto; el bind lo que hace es decir que el \'93this\'94 de la constructora va a ser el objeto vac\'edo.\
+\
+2) Object.create:\
+Object es el \'93objeto alfa\'94, todos los dem\'e1s tienen como prototipo a Object. Uno de sus m\'e9todos es \'91cr\'e9ate\'92, que crea un nuevo objeto cuyo prototipo es el primer objeto que le pasamos.\
+Sintaxis:\
+var nombre_object_constructor \{\
+key : value,\
+key2 : value2\
+\}\
+\
+var nuevo_objeto = Object.create(nombre_object_constructor);\
+Si yo llamo a nuevo_objeto me devuelve un \{ \} objeto vac\'edo, PERO si yo hago nuevo_objeto.key me va a mostrar lo que corresponde por haber sido creado desde nombre_object_constructor.\
+\
+3) class (copia de JAVA):\
+ES6\
+class Nombreclase \{\
+	constructor (parametro1, parametro2)\{\
+		this.parametro1 = valor_parametro1;\
+		this.parametro2 = valor_parametro2:\
+	\}\
+	nombre_metodo( ) \{\
+		return this.parametro\
+	\}\
+	otro_metodo( ) \{\
+		return otro_parametro\
+	\}\
+\}\
+\
+var nombre_nuevo = new Nombreclase (parametro1, parametro2)\
+Una clase puede heredar de otra clase, usando 
+\f2\i extend 
+\f0\i0 y luego super para llamar a los argumentos de la clase de la  que estoy heredando o que \'93estoy extendiendo\'94\
+\
+\
+Una vez instanciado, el objeto se comporta como los objetos literales: puedo a\'f1adirle propiedades, eliminarlas o pisarlas.}
